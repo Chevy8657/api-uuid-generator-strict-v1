@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: api-uuid-generator-strict-v1
+    runtime: python
+    rootDir: Utility/UUID_Generator
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+
+  - type: web
+    name: api-word-counter-v1
+    runtime: python
+    rootDir: Logic/Word_Counter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+
+  - type: web
+    name: api-01a-token-counter-v1
+    runtime: python
+    rootDir: Logic/Token_Counter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
